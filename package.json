@@ -1,0 +1,25 @@
+{
+  "name": "mnelson-1-course_management_platform",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "npx sequelize-cli db:migrate --config src/config/config.json",
+    "seed": "npx sequelize-cli db:seed:all --config src/config/config.json",
+    "start": "node src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql2": "^3.14.2",
+    "sequelize": "^6.37.7"
+  },
+  "sequelize": {
+    "migrations-path": "./src/migrations",
+    "models-path": "./src/models",
+    "seeders-path": "./src/seeders"
+  }
+}
