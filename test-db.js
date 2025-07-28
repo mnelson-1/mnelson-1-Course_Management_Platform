@@ -1,4 +1,3 @@
-// Create a test file test-db.js
 const { sequelize } = require('./src/models');
 
 sequelize.authenticate()
