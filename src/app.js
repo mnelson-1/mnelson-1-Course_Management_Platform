@@ -4,7 +4,11 @@ const express = require('express');
 const db = require('./models');
 const sequelize = db.sequelize;
 
-const allocationRoutes = require('./routes/allocationRoutes');
+const authRoutes = require('./routes/authRoutes');
+const courseOfferingRoutes = require('./routes/courseOfferingRoutes');
+const managerRoutes = require('./routes/managerRoutes');
+const facilitatorRoutes = require('./routes/facilitatorRoutes');
+const studentRoutes = require('./routes/studentRoutes');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 
@@ -14,6 +18,7 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(helmet());
 app.use(express.json({ limit: '10kb' }));
+app.use('/api/auth', authRoutes);
 
 // Rate limiting
 const limiter = rateLimit({
@@ -23,7 +28,10 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // Routes
-app.use('/api/v1/allocations', allocationRoutes);
+app.use('/api/v1/course-offerings', courseOfferingRoutes);
+app.use('/api/v1/managers', managerRoutes);
+app.use('/api/v1/facilitators', facilitatorRoutes);
+app.use('/api/v1/students', studentRoutes);
 
 // Health check
 app.get('/api/v1/health', async (req, res) => {

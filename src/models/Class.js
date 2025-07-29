@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  return sequelize.define('Class', {
+  const Class = sequelize.define('Class', {
     id: {
       type: DataTypes.STRING,
       primaryKey: true,
@@ -7,6 +7,14 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    year: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    semester: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
     startDate: {
       type: DataTypes.DATE,
@@ -16,5 +24,25 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATE,
       allowNull: false,
     },
+    isActive: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
+    }
   });
+
+  Class.associate = (models) => {
+    // Has many students
+    Class.hasMany(models.Student, {
+      foreignKey: 'classId',
+      as: 'students'
+    });
+
+    // Has many course offerings
+    Class.hasMany(models.CourseOffering, {
+      foreignKey: 'classId',
+      as: 'courseOfferings'
+    });
+  };
+
+  return Class;
 };
