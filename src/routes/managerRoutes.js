@@ -14,6 +14,7 @@ router.get('/dashboard', managerController.getManagerDashboard);
 // Facilitator management
 router.get('/facilitators', managerController.getManagedFacilitators);
 router.get('/facilitators/:facilitatorId', managerController.getFacilitatorDetails);
+router.post('/facilitators', managerController.createFacilitator);
 
 // Cohort management
 router.get('/cohorts', managerController.getManagedCohorts);
@@ -22,6 +23,7 @@ router.get('/cohorts/:cohortId/students', managerController.getCohortStudents);
 
 // Student management
 router.put('/students/:studentId/cohort', managerController.updateStudentCohort);
+router.post('/students', managerController.createStudent);
 
 // Course offering management
 router.get('/course-offerings', managerController.getManagerCourseOfferings);

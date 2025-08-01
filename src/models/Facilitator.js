@@ -1,9 +1,12 @@
 module.exports = (sequelize, DataTypes) => {
   const Facilitator = sequelize.define('Facilitator', {
     id: {
-      type: DataTypes.STRING,
-      primaryKey: true
-    },
+        type: DataTypes.UUID, // or DataTypes.INTEGER
+        defaultValue: DataTypes.UUIDV4, // or autoIncrement: true for integers
+        allowNull: false,
+        primaryKey: true,
+        unique: true,
+      },
     userId: {
       type: DataTypes.STRING,
       allowNull: false,
