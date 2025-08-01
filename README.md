@@ -45,7 +45,7 @@ The platform is built with a modular, role-based architecture supporting:
 
 1. **Clone the repository**
 ```bash
-git clone <repository-url>
+git clone https://github.com/mnelson-1/mnelson-1-Course_Management_Platform
 cd course-management-platform
 ```
 
@@ -59,7 +59,7 @@ Create a `.env` file in the root directory:
 ```env
 # Database Configuration
 DB_HOST=localhost
-DB_USER=your_mysql_user
+DB_USER=your_mysql_user - this is unique to you, mine is in my env file
 DB_PASSWORD=your_mysql_password
 DB_NAME=course_management_dev
 
@@ -73,10 +73,8 @@ REDIS_PASSWORD=your_redis_password
 
 # Notification Settings (Module 2)
 NOTIFICATION_DEADLINE_HOURS=168  # 1 week in hours
-SMTP_HOST=your_smtp_host
+SMTP_HOST=localhost
 SMTP_PORT=587
-SMTP_USER=your_email
-SMTP_PASS=your_email_password
 ```
 
 4. **Database Setup**
@@ -348,36 +346,4 @@ npm run test:coverage      # Generate coverage report
 3. **Redis**: Configure Redis clustering for high availability (Module 2)
 4. **Monitoring**: Implement application performance monitoring (APM)
 5. **Logging**: Use centralized logging solutions (ELK stack, etc.)
-6. **SSL/TLS**: Enable HTTPS in production environments
-
-### Docker Deployment
-```bash
-# Build and run with Docker Compose
-docker-compose up -d
-
-# Scale services
-docker-compose up -d --scale api=3 --scale worker=2
-```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📞 Support
-
-For support and questions:
-- Create an issue in the repository
-- Contact the development team
-- Check the documentation wiki
-
----
-
-**Built with ❤️ for academic excellence**
+6. **SSL/TLS**: Enable HTTPS in production environment
