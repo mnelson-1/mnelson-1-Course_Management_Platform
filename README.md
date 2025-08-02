@@ -347,3 +347,7 @@ npm run test:coverage      # Generate coverage report
 4. **Monitoring**: Implement application performance monitoring (APM)
 5. **Logging**: Use centralized logging solutions (ELK stack, etc.)
 6. **SSL/TLS**: Enable HTTPS in production environment
+
+
+### Link to Video Walkthrough
+https://youtu.be/xQrMu3TQkAc
