@@ -33,4 +33,8 @@
     "models-path": "./src/models",
     "seeders-path": "./src/seeders"
   }
+  "scripts": {
+  "test": "jest"
+  }
 }
+
